@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--
+   To change this license header, choose License Headers in Project Properties.
+   To change this template file, choose Tools | Templates
+   and open the template in the editor.
+   -->
+<html>
+
+<head>
+	<title>Home Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="img/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="img/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="img/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="img/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+	<link rel="apple-touch-icon" href="img/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="img/favicon-144.png">
+	<meta name="msapplication-config" content="img/browserconfig.xml">
+	<link rel="stylesheet" href="main.css">
+	<style>
+	html, body {
+		margin: 0;
+		height: 100%;
+		overflow: hidden;
+		background-image: linear-gradient(to right bottom, #1e1e1e, #1c1c1c, #1a1a1a, #171717, #151515, #131313, #101010, #0d0d0d, #0a0a0a, #070707, #030303, #000000);
+	}
+	</style>
+</head>
+
+<body>
+        <!---Splitted the page into two parts with 50% widths (like the logic behind Bootstraps)--->
+        
+        <!---Home page image)--->
+	<div class="split left">
+		<div class="centered"> <img src="img/home.png" style="height: auto; width: auto; max-width: 600px; max-height: 600px; margin-top: 20px;" class="shake" alt="Home"> </div>
+	</div>
+
+        <!---Login/Register section--->
+	<div class="split right">
+		<div class="centered">
+                    
+                        <!---Tabs for Login/Register)--->
+			<div class="tab">
+				<button class="tablinks" onclick="openCity(event, 'Login')" id="defaultOpen">Login</button>
+				<button class="tablinks" onclick="openCity(event, 'Register')">Register</button>
+			</div>
+                        
+                        <!---Contents of each logic option (set as hidden by default)--->
+			<div id="Login" class="tabcontent" style="background-image: linear-gradient(to right bottom, #1e1e1e, #1c1c1c, #1a1a1a, #171717, #151515, #131313, #101010, #0d0d0d, #0a0a0a, #070707, #030303, #000000);">
+				<div class="field">
+					<div class="f-wrapper">
+						<select id="roleSel1" class="cbx" tabindex="50" name="role">
+							<option value="" disabled selected>Choose your account type to login</option>
+							<option value="loginEndUser">End-User</option>
+							<option value="loginHRR">Human Resources Representative (HRR)</option>
+							<option value="loginCompany">Company</option>
+						</select>
+					</div>
+				</div>
+				<div id="loginEndUser" class="hidden">
+					<h1>Login End-User</h1>
+					<form action="enduser.php" method="post">            
+                                            <input type="text" required name="username" placeholder="Username"><br>
+                                            <input type="password" required name="passwrd" placeholder="Password"><br><br>
+                                            <input type="reset" name="resetbtn1" value="Reset">&emsp;
+                                            <input type="submit" name="submitbtn1" value="Login">
+                                        </form>
+				</div>
+				<div id="loginHRR" class="hidden">
+					<h1>Login HRR</h1>
+					<form action="hrr.php" method="post">            
+                                            <input type="text" required name="username" placeholder="Username"><br>
+                                            <input type="password" required name="passwrd" placeholder="Password"><br><br>
+                                            <input type="reset" name="resetbtn1" value="Reset">&emsp;
+                                            <input type="submit" name="submitbtn1" value="Login">
+                                        </form>
+				</div>
+				<div id="loginCompany" class="hidden">
+					<h1>Login Company</h1>
+					<form action="company.php" method="post">            
+                                            <input type="number" required name="cid" placeholder="Company ID"><br><br>
+                                            <input type="reset" name="resetbtn1" value="Reset">&emsp;
+                                            <input type="submit" name="submitbtn1" value="Login">
+                                        </form>
+				</div>
+			</div>
+                        
+                        <!---Contents of each register option (set as hidden by default)--->
+			<div id="Register" class="tabcontent" style="background-image: linear-gradient(to right bottom, #1e1e1e, #1c1c1c, #1a1a1a, #171717, #151515, #131313, #101010, #0d0d0d, #0a0a0a, #070707, #030303, #000000);">
+				<div class="field">
+					<div class="f-wrapper">
+						<select id="roleSel2" class="cbx" tabindex="50" name="role">
+							<option value="" disabled selected>Choose an account type to register</option>
+							<option value="registerEndUser">End-User</option>
+							<option value="registerHRR">Human Resources Representative (HRR)</option>
+							<option value="registerCompany">Company</option>
+						</select>
+					</div>
+				</div>
+				<div id="registerEndUser" class="hidden">
+					<h1>Register End-User</h1>
+					<form action="registerenduser.php" method="post">
+						<input type="text" required name="username" placeholder="Username"><br>
+                                                <input type="password" required name="passwrd" placeholder="Password"><br><br>
+						<input type="text" required name="fname" placeholder="First name"><br>
+						<input type="text" required name="lname" placeholder="Last name"><br>
+                                                <input type="text" required name="email" placeholder="E-mail"><br>
+						<label for="military"></label>
+						<select name="military_service_stat" id="military_service_stat" required>
+                                                        <option value="" disabled selected>Select military service status</option>
+							<option value="C">Completed</option>
+							<option value="D">Delayed</option>
+							<option value="E">Exempt</option>
+						</select>
+						<br>
+						<br>
+						<input type="reset" name="resetbtn1" value="Reset">&emsp;
+						<input type="submit" name="submitbtn1" value="Register">
+                                        </form>
+				</div>
+				<div id="registerHRR" class="hidden">
+					<h1>Register HRR</h1>
+					<form action="registerhrr.php" method="post">
+						<input type="text" required name="username" placeholder="Username"><br>
+                                                <input type="password" required name="passwrd" placeholder="Password"><br><br>
+						<input type="text" required name="fname" placeholder="First name"><br>
+						<input type="text" required name="lname" placeholder="Last name"><br>
+                                                <input type="text" required name="email" placeholder="E-mail"><br>
+						<input type="text" name="endUser_username" placeholder="End-User username"><br><br>
+						<input type="reset" name="resetbtn1" value="Reset">&emsp;
+						<input type="submit" name="submitbtn1" value="Register"> </form>
+				</div>
+				<div id="registerCompany" class="hidden">
+					<h1>Register Company</h1>
+					<form action="registercompany.php" method="post">
+						<input type="number" required name="cid" placeholder="Company ID"><br>
+						<input type="text" required name="name" placeholder="Company name"><br>
+						<input type="text" required name="address" placeholder="Address"><br>
+						<input type="number" required name="phone" placeholder="Phone"><br><br>
+						<input type="reset" name="resetbtn1" value="Reset">&emsp;
+						<input type="submit" name="submitbtn1" value="Add End User">
+                                        </form>
+				</div>
+			</div>
+		</div> 
+        </div>   
+        <script>
+        //Script to switch between Login/Register tabs
+        function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for(i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for(i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+        //Script to display selected option in Login tab
+        var ids1 = ["loginEndUser", "loginHRR", "loginCompany"];
+        var dropDown1 = document.getElementById("roleSel1");
+        dropDown1.onchange = function() {
+                for(var x = 0; x < ids1.length; x++) {
+                        document.getElementById(ids1[x]).style.display = "none";
+                }
+                document.getElementById(this.value).style.display = "block";
+        }
+
+        //Script to display selected option in Register tab
+        var ids2 = ["registerEndUser", "registerHRR", "registerCompany"];
+        var dropDown2 = document.getElementById("roleSel2");
+        dropDown2.onchange = function() {
+                for(var x = 0; x < ids2.length; x++) {
+                        document.getElementById(ids2[x]).style.display = "none";
+                }
+                document.getElementById(this.value).style.display = "block";
+            }
+        </script>
+</body>
+</html>

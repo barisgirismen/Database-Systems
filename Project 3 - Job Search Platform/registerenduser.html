@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head> <title>End User Registration Page</title>
+    <link rel="icon" type="image/x-icon" href="https://isik.barisgirismen.com/favicon.ico"/>
+    </head> 
+    <body>
+        <h1>Register End User</h1>
+        <form action="registerenduser.php" method="post">
+            <b>Username: </b> <input type="text" required  name="username"><br><br>
+            <b>Password: </b> <input type="password" required name="passwrd"><br><br>
+            <b>First Name: </b> <input type="text" required name="fname"><br><br>
+            <b>Last Name: </b> <input type="text" required name="lname"><br><br>
+            <b>User Email: </b> <input type="text" required name="email"><br><br>
+            <label for="military"><b>Select military service status:</b></label>
+            <select name="military_service_stat" required id="military_service_stat">
+            <option value="exempt">E</option>
+            <option value="delayed">D</option>
+            <option value="complete">C</option>
+            </select>            
+            <br><br>
+            <input type="reset" name="resetbtn1" value="Reset">&emsp;<input type="submit" name="submitbtn1" value="Register">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head> <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="https://isik.barisgirismen.com/favicon.ico"/>
+    </head> 
+    <body>
+        <h1>Login</h1>  
+        <form action="jobposting.php" method="post">            
+            <b>Salary: </b> <input type="number" required name="salary"><br><br>
+            <b>Salary: </b> <input type="text" required name="description"><br><br>
+            <b>Phone: </b> <input type="number" min="0000000000" max="9999999999" required name="phone"><br><br>
+            <b>Opening: </b> <input type="number" required min="1" name="salary"><br><br>
+            <b>Opening Date: </b> <input type="date" required name="openingdate"><br><br>
+            <b>Duration: </b> <input type="number" required min="1" name="salary"><br><br>
+            <b>CID: </b> <input type="number" required name="cid"><br><br>
+            <select name="contract_type" required id="contract_type">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            </select>
+            
+            <!--Manager Job Posting-->
+            <b>Department Name: </b> <input type="number" required min="1" name="deptName"><br><br>
+            <b>Department Size: </b> <input type="number" min="1" required name="deptSize"><br><br>
+            
+            <!--Internship Job Posting-->
+            <b>Minimum Days: </b> <input type="number" min="1" required name="cid"><br><br>
+            
+            <label for="contract_type"><b>Contract Type:</b></label>
+            <select name="contract_type" required id="contract_type">
+            <option value="PT">PT</option>
+            <option value="FT">FT</option>
+            </select>
+            <br><br>
+            <input type="reset" name="resetbtn1" value="Reset">&emsp;<input type="submit" name="submitbtn1" value="Create">
+        </form>
+    </body>
+</html>
